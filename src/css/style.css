@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+main {
+  width: 940px;
+  margin: 0 auto;
+}
+
+/* Style the header with a crimson background and some padding */
+.header {
+  overflow: hidden;
+  background-color: crimson;
+  padding: 20px 10px;
+}
+
+/* Style the header links */
+.header a {
+  float: left;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+/* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
+.header a.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+/* Change the background color on mouse-over */
+.header a:hover {
+  background-color: rgb(19, 240, 211);
+  color: black;
+}
+
+/* Style the active/current link*/
+.header a.active {
+  background-color: rgb(0, 0, 0);
+  color: rgb(21, 140, 204);
+}
+
+/* Float the link section to the right */
+.header-right {
+  float: right;
+}
+
+form {
+  margin: 70px auto;
+  max-width: 400px;
+}
+
+form label {
+  display: block;
+  font-size: 20px;
+  margin: 0 0 10px;
+
+}
+
+form input{
+  display: block;
+  margin: 0 0 20px;
+  padding: 10px 25px;
+  width: 90%;
+  
+}
+
+
+.conteudo{
+  /* text-align: center; */
+  width: 940px;
+  margin: 40px auto;
+}
+
+
+
+
+
+/* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+
+  .header-right {
+    float: none;
+  }
+}

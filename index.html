@@ -1,12 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projeto Inicial</title>
+    <link rel="stylesheet" href="src/css/style.css">
 </head>
+
 <body>
-    <h1>Teste</h1>
+    <header>
+        <div class="header">
+            <a href="#" class="logo">PROJETO</a>
+            <div class="header-right">
+                <a href="">Home</a>
+                <a href="">Contatos</a>
+                <a href="">Sobre</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="conteudo">
+        <div class="principal">
+            <div class="mochila"></div>
+            <form action="" class="adicionar" id="novoItem">
+                <label for="item">Nome</label>
+                <input type="text" name="nome" id="nome">
+                <label for="item">Quantidade</label>
+                <input type="number" name="quantidade" id="quantidade">
+                <input type="submit" value="Adicionar" class="cadastrar">
+            </form>
+        </div>
+        
+        <ul class="lista" id="lista">
+            <li class="item"><strong>7</strong>Camisas</li>
+            <li class="item"><strong>1</strong>Calça</li>
+            <li class="item"><strong>3</strong>Casaco</li>
+            <li class="item"><strong>3</strong>Meia</li>
+            <li class="item"><strong>10</strong>Cuecas</li>
+            <li class="item"><strong>2</strong>Tênis</li>
+            <li class="item"><strong>1</strong>Celular</li>
+            <li class="item"><strong>1</strong>Carregador</li>
+            <li class="item"><strong>1</strong>Adaptador de tomada</li>
+        </ul>
+    </main>
+    <script src="src/js/script.js"></script>
+
 </body>
+
 </html>
