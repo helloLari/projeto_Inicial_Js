@@ -3,9 +3,10 @@ const form = document.getElementById("novoItem")
 const lista = document.getElementById("lista")
 const itens = JSON.parse(localStorage.getItem("itens")) || []
 
+
 itens.forEach((elemento) => {
   criaElemento(elemento)
-})
+}) 
 
 form.addEventListener("submit", (evento) => {
   //O método preventDefault() cancela o evento se for cancelável, significando que a ação padrão que pertence ao evento não ocorrerá.
@@ -69,6 +70,7 @@ function botaoDeleta(id) {
   elementoBotao.innerText = "X"
 
   elementoBotao.addEventListener("click", function () {
+    //o botão é filho do "li", então ele remove o elemento inteiro
     deletaElemento(this.parentNode, id)
   })
 
@@ -81,4 +83,24 @@ function deletaElemento(tag, id) {
   itens.splice(itens.findIndex(elemento => elemento.id === id), 1)
   //json.stringify. stringify = Serve para transformar esse elemento em uma string
   localStorage.setItem("itens", JSON.stringify(itens))
+}
+
+
+
+// função para sortear um nome da array
+
+function sortear(){
+
+  let participantes = itens.length;
+  if (participantes != 0){
+
+  numero_sorteado = Math.ceil(Math.random() * participantes);
+
+  console.log(numero_sorteado);
+  console.log(itens[numero_sorteado-1]);
+
+  s = document.getElementById("sorteado");
+  s.innerHTML = "O participante sorteado foi:   🎉  " + (itens[numero_sorteado-1]);
+  console.log(itens.toString());
+  }
 }

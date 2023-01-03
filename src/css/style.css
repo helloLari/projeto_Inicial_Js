@@ -64,19 +64,54 @@ form label {
 
 }
 
-form input{
+form input {
   display: block;
   margin: 0 0 20px;
   padding: 10px 25px;
   width: 90%;
-  
+  margin-bottom: 10px;
+  font-size: 16px;
+
 }
 
 
-.conteudo{
+.conteudo {
   /* text-align: center; */
   width: 940px;
   margin: 40px auto;
+}
+
+
+
+
+
+button {
+  width: 20px;
+  height: 25px;
+  margin: 5px auto;
+  border-radius: 5px;
+  border: 6px;
+  font-weight: 500;
+  background-color: rgba(220, 20, 60, 0.795);
+  cursor: pointer;
+ 
+  margin: 10px;}
+
+
+
+
+.sorteio {
+  width: 190px;
+  height: 65px;
+  display: block;
+  text-align: center;
+  font-size: 1.6em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  background-color:deepskyblue;
+  border-radius: 5px;
 }
 
 
