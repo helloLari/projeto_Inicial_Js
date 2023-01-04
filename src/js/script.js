@@ -13,14 +13,13 @@ form.addEventListener("submit", (evento) => {
   evento.preventDefault()
 
   const nome = evento.target.elements['nome']
-  const quantidade = evento.target.elements['quantidade']
+  // const quantidade = evento.target.elements['quantidade']
 
   //Com o método find(), ele procura um elemento e, com o operador de comparação ===, ele compara se o valor e tipo de dois elementos são idênticos.
   const existe = itens.find(elemento => elemento.nome === nome.value)
 
   const itemAtual = {
     "nome": nome.value,
-    "quantidade": quantidade.value
   }
 
   if (existe) {
@@ -41,7 +40,7 @@ form.addEventListener("submit", (evento) => {
   localStorage.setItem("itens", JSON.stringify(itens))
 
   nome.value = ""
-  quantidade.value = ""
+  
 })
 
 //função com parametro para retornar dados
@@ -50,7 +49,6 @@ function criaElemento(item) {
   novoItem.classList.add("item")
 
   const numeroItem = document.createElement("strong")
-  numeroItem.innerHTML = item.quantidade
   numeroItem.dataset.id = item.id
   novoItem.appendChild(numeroItem)
 
@@ -62,8 +60,9 @@ function criaElemento(item) {
 }
 
 function atualizaElemento(item) {
-  document.querySelector("[data-id='" + item.id + "']").innerHTML = item.quantidade
+  document.querySelector("[data-id='" + item.id + "']").innerHTML 
 }
+
 
 function botaoDeleta(id) {
   const elementoBotao = document.createElement("button")
@@ -96,11 +95,11 @@ function sortear(){
 
   numero_sorteado = Math.ceil(Math.random() * participantes);
 
-  console.log(numero_sorteado);
-  console.log(itens[numero_sorteado-1]);
+  // console.log(numero_sorteado);
+  // console.log(itens[numero_sorteado-1]);
 
-  s = document.getElementById("sorteado");
-  s.innerHTML = "O participante sorteado foi:   🎉  " + (itens[numero_sorteado-1]);
-  console.log(itens.toString());
+  nomeSorteado = document.getElementById("sorteado");
+  nomeSorteado.innerHTML = "O participante sorteado foi:   🎉    " + (itens[numero_sorteado-1].nome);
+  // console.log(itens.toString());
   }
 }
