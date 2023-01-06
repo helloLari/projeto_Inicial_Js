@@ -1,10 +1,15 @@
-# Projeto Sorteio participante cadastrado no sistema  🎰🎲🍀
+# Sorteio participante cadastrado no sistema  🎰🎲🍀
+
+<p align="center">
+  <img src="https://media.tenor.com/OH7SMS7CNQ0AAAAd/cartas-sorteio.gif" alt="animated" />
+</p>
+
 
 Projeto desenvolvido para praticar a base apronfundada em JavaScript.
 
 
 __________________________
-
+## Arquitetura:
 
        📁 PROJETO
           |-  📁 src
