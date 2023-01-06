@@ -1,9 +1,8 @@
 # Sorteio participante cadastrado no sistema  🎰🎲🍀
 
-<p align="center">
-  <img src="https://media.tenor.com/OH7SMS7CNQ0AAAAd/cartas-sorteio.gif" alt="animated" />
+ <p align="center"> 
+<img src="https://media.giphy.com/media/GB0lKzzxIv1te/giphy.gif">
 </p>
-
 
 Projeto desenvolvido para praticar a base apronfundada em JavaScript.
 
@@ -78,3 +77,8 @@ Right click on a HTML file from Explorer Window and click on Open with Live Serv
 _______________________     
 
 Desenvolvido por: Larisse Rodrigues 👩🏽‍💻
+
+
+
+
+[⬆ Voltar ao topo](projeto_Inicial_Js)<br>
