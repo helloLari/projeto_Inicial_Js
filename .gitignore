@@ -1,0 +1,9 @@
+# Node modules
+/node_modules
+
+# env variables
+.env
+
+# Dist
+/dist
+/bundle
