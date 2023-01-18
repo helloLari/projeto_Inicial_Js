@@ -63,14 +63,13 @@ Primeiramente, crie um Fork deste repositório.
 
 Faça o clone do seu fork para seu computador utilizando: git clone https://github.com/helloLari/projeto_Inicial_Js.git
 
-cd projeto
-Abrir index.html  utilizando a extensão Live Server
+---
+## Project Setup
+- run `yarn` para instalar as dependência.
+- run `yarn start` para executar o projeto.
 
-- Como abrir Live Server: 
-
-Open a project and click to Go Live from the status bar to turn the server on/off. 
-Right click on a HTML file from Explorer Window and click on Open with Live Server.
-
+## Defaults
+- O projeto será executado na porta `9000` por padrão.
 
 ```
 
@@ -78,7 +77,3 @@ _______________________
 
 Desenvolvido por: Larisse Rodrigues 👩🏽‍💻
 
-
-
-
-[⬆ Voltar ao topo](https://github.com/helloLari/projeto_Inicial_Js)<br>
