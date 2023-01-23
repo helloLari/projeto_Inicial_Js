@@ -1,9 +1,9 @@
 {
-  "name": "js-boilerplate",
+  "name": "projeto",
   "version": "0.1.0",
-  "description": "JS Boilerplate",
+  "description": "Projeto",
   "main": "index.js",
-  "author": "Felipe Leão",
+  "author": "Larisse",
   "license": "MIT",
   "engines": {
     "node": "^v18.0.0"

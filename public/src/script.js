@@ -1,11 +1,11 @@
 
-const form = document.getElementById("novoItem")
-const lista = document.getElementById("lista")
-const itens = JSON.parse(localStorage.getItem("itens")) || []
+const form = document.getElementById("newItem")
+const list = document.getElementById("list")
+const registeRedname = JSON.parse(localStorage.getItem("registeRedname")) || []
 
 //forEach() está percorrendo cada elemento do array itens e chamando a função criaElemento com cada elemento como argumento. 
-itens.forEach((elemento) => {
-  criaElemento(elemento)
+registeRedname.forEach((elemento) => {
+  createElement(elemento)
 }) 
 
 form.addEventListener("submit", (evento) => {
@@ -23,28 +23,28 @@ form.addEventListener("submit", (evento) => {
   }
 
   //Com o método find(), ele procura um elemento e, com o operador de comparação ===, ele compara se o valor e tipo de dois elementos são idênticos.
-  const existe = itens.find(elemento => elemento.nome === nome.value)
+  const nameAlreadyExists = registeRedname.find(elemento => elemento.nome === nome.value)
 
-  const itemAtual = {
+  const currentRegisteRedname = {
     "nome": nome.value,
   }
 
-  if (existe) {
-    itemAtual.id = existe.id
+  if (nameAlreadyExists) {
+    currentRegisteRedname.id = nameAlreadyExists.id
 
-    atualizaElemento(itemAtual)
+    atualizaElemento(currentRegisteRedname)
 
-    itens[itens.findIndex(elemento => elemento.id === existe.id)] = itemAtual
+    registeRedname[registeRedname.findIndex(elemento => elemento.id === nameAlreadyExists.id)] = currentRegisteRedname
   } else {
     //se itens existir, pega ID e adiciona 1 para incrementar e atualizar o item do array
-    itemAtual.id = itens[itens.length - 1] ? (itens[itens.length - 1]).id + 1 : 0;
+    currentRegisteRedname.id = registeRedname[registeRedname.length - 1] ? (registeRedname[registeRedname.length - 1]).id + 1 : 0;
 
-    criaElemento(itemAtual)
+    createElement(currentRegisteRedname)
     //inserir um elemento no array
-    itens.push(itemAtual)
+    registeRedname.push(currentRegisteRedname)
   }
 
-  localStorage.setItem("itens", JSON.stringify(itens))
+  localStorage.setItem("registeRedname", JSON.stringify(registeRedname))
 
   nome.value = ""
   
@@ -79,9 +79,9 @@ function enviarPessoa(){
 }
 
 //função com parametro para retornar dados, cria um novo elemento de item de lista e o anexa à lista.  Ele faz isso criando primeiro um novo lielemento e adicionando uma classe de "item" a ele. 
-function criaElemento(item) {
-  const novoItem = document.createElement("li")
-  novoItem.classList.add("item")
+function createElement(item) {
+  const newItem = document.createElement("li")
+  newItem.classList.add("item")
 
   const numeroItem = document.createElement("strong")
 
@@ -89,16 +89,16 @@ function criaElemento(item) {
   numeroItem.dataset.id = item.id
 
   //adiciona um elemento numeroItem ao final da lista de elementos filhos de novoItem.
-  novoItem.appendChild(numeroItem)
+  newItem.appendChild(numeroItem)
 
   //modifica o conteúdo HTML de novoItem acrescentando o nome do item.
-  novoItem.innerHTML += item.nome
+  newItem.innerHTML += item.nome
 
   //diciona um botão de exclusão ao final da lista de elementos filhos de novoItem.
-  novoItem.appendChild(botaoDeleta(item.id))
+  newItem.appendChild(botaoDeleta(item.id))
 
   //adiciona novoItem ao final da lista lista.
-  lista.appendChild(novoItem)
+  list.appendChild(newItem)
 }
 
 
@@ -116,19 +116,19 @@ function botaoDeleta(id) {
 
     //O elemento pai do elemento que foi clicado é obtido usando o método parentNode,que retorna o elemento pai do elemento no qual o método é chamado. 
     //o elemento que foi clicado é o próprio botão de exclusão, então o elemento pai do botão é o elemento HTML que contém o botão.
-    deletaElemento(this.parentNode, id)
+    deletElemento(this.parentNode, id)
   })
 
   return elementoBotao
 }
 
-function deletaElemento(tag, id) {
+function deletElemento(tag, id) {
   tag.remove()
 
-  itens.splice(itens.findIndex(elemento => elemento.id === id), 1)
+  registeRedname.splice(registeRedname.findIndex(elemento => elemento.id === id), 1)
 
   //json.stringify. stringify = Serve para transformar esse elemento em uma string
-  localStorage.setItem("itens", JSON.stringify(itens))
+  localStorage.setItem("registeRedname", JSON.stringify(registeRedname))
 }
 
 
@@ -136,17 +136,17 @@ function deletaElemento(tag, id) {
 // função para sortear um nome da array
 function sortear(){
 
-  let participantes = itens.length;
+  let participantes = registeRedname.length;
   if (participantes != 0){
 
     //A expressão Math.random() gera um número aleatório entre 0 (inclusive) e 1 (exclusive). A expressão seguinte multiplica esse número aleatório pelo número de participantes e arredonda o resultado para cima, usando a função Math.ceil. O resultado final é um número inteiro aleatório entre 1 e o número de participantes (inclusive). Esse número pode ser usado como índice de um array de participantes para selecionar o nome sorteado.
   nome_sorteado = Math.ceil(Math.random() * participantes);
 
   // console.log(nome_sorteado);
-  // console.log(itens[nome_sorteado-1]);
+  // console.log(registeRedname[nome_sorteado-1]);
 
   sorteado = document.getElementById("sorteado");
-  sorteado.innerHTML = "O participante sorteado foi:   🎉    " + (itens[nome_sorteado-1].nome);
-  // console.log(itens.toString());
+  sorteado.innerHTML = "O participante sorteado foi:   🎉    " + (registeRedname[nome_sorteado-1].nome);
+  // console.log(registeRedname.toString());
   }
 }
