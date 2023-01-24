@@ -1,44 +1,46 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Projeto Inicial</title>
-    <link rel="stylesheet" href="src/css/style.css">
-</head>
+    <link rel="stylesheet" href="src/css/style.css" />
+  </head>
 
-<body>
+  <body>
     <header>
-        <div class="header">
-            <a href="#" class="logo">PROJETO</a>
-            <div class="header-right">
-                <a href="">Home</a>
-                <a href="">Contatos</a>
-                <a href="">Sobre</a>
-            </div>
+      <div class="header">
+        <a href="#" class="logo">PROJETO</a>
+        <div class="header-right">
+          <a href="">Home</a>
+          <a href="">Contatos</a>
+          <a href="">Sobre</a>
         </div>
+      </div>
     </header>
 
     <main class="conteudo">
-        <div class="principal">
-            <div class="formulario"></div>
-            <form action="" class="adicionar" id="newItem">
+      <div class="principal">
+        <div class="formulario"></div>
+        <form action="" class="adicionar" id="newItem">
+          <label for="name">Nome</label>
+          <input type="text" name="name" id="name" />
 
-                <label for="name">Nome</label>
-                <input type="text" name="name" id="name">
-            
-                <input type="submit" value="Adicionar" class="cadastrar" id="cadastrar">
-                
-            </form>
-        </div>
+          <input
+            type="submit"
+            value="Adicionar"
+            class="cadastrar"
+            id="cadastrar"
+          />
+        </form>
+      </div>
 
-        <ul class="list" id="list"></ul>
+      <ul class="list" id="list"></ul>
 
-        <button onclick="raffle()" class="sorteio">Sortear</button>
-        <br><br>
-        <h2 id="drawn"></h2>
+      <button onclick="raffle()" class="sorteio">Sortear</button>
+      <br /><br />
+      <h2 id="drawn"></h2>
     </main>
     <script src="src/script.js"></script>
     <script src="bundle.js"></script>
